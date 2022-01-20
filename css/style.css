@@ -10,6 +10,10 @@ body {
     background-color: #ffffff;
 }
 
+li, p{
+    color: #949292;
+}
+
 /* clearfix da applicare per evitare che float faccia collassare gli elementi */
 .clearfix::after{
     content: ""; /*# Necessario per definizione di pseudo-elemento (before, after, ecc.) */
@@ -29,49 +33,115 @@ header, .jumbotron{
 }
 
 header{
-    padding: 20px;
-    border: 1px solid black;
+    padding: 20px 0 20px;
 }
 
-.jumbotron{
-    height: 350px;
-    background-color: #e1d67a;
+section.jumbotron{
+    height: 470px;
+    background-image: url("../img/banner.jpg");
+    background-size: cover;
+    background-position: 1px;
+    position: relative;
+    z-index: 0;
+}
+
+.layover{
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); 
+}
+
+section.jumbotron, 
+.aside-box-img,
+.article-box-img,
+.layover{
+    border-radius: 10px;
+}
+
+.text-jumbotron{
+    width: 490px;
+    position: absolute;
+    bottom: 0;
+    margin: 0 40px 50px;
+    z-index: 2;
+}
+
+.text-jumbotron>h2, 
+.text-jumbotron>p{
+    color: white;
+}
+
+.text-jumbotron>h2{
+    font-weight: normal;
 }
 
 section.main{
     margin-bottom: 10px;
-    background-color: #0186ff;
 }
 
-.bg-grey{background-color: #abcfe7;}
-
 .main-header{
-    height: 75px;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.main-header>h1{
+    font-size: 1.7em;
 }
 
 .main-aside, .main-article{
-    height: 400px;
     float: left;
 }
 
 .main-aside{
-    width: calc(50% / 2);
+    width: 20%;
 }
 
 .main-article{
-    width: calc(50% - 30px);
+    width: calc(60% - 30px);
     margin: 0 15px 15px;
 }
 
+.box-img{
+    width: 100%;
+    height: 190px;
+    margin-bottom: 12px;
+}
+
+.aside-1-img{
+    background-image: url("../img/img-1.jpg");
+    background-size: contain;
+}
+
+.aside-2-img{
+    background-image: url("../img/img-3.jpg");
+}
+
+.article-box-img{
+    background-image: url("../img/banner-2.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
 footer{
-    height: 60px;
-    background-color: #8801fe;
+    height: 80px;
+}
+
+footer>h4{
+    text-align: center;
+    font-weight: 100;
+}
+
+footer span{
+    color: red;
+    font-size: 2em;
 }
 
 nav li{
     display: inline;
-    color: #949292;
     font-weight: 500;
     padding-right: 5px;
 }
