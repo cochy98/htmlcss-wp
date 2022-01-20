@@ -1,0 +1,64 @@
+/* Reset */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* clearfix da applicare per evitare che float faccia collassare gli elementi */
+.clearfix::after{
+    content: ""; /*# Necessario per definizione di pseudo-elemento (before, after, ecc.) */
+    display: table; /*? Necessario per compatibilità con vecchi browser, per gestire la relazione con il contenuto indipendentemente dalle nuove funzionalità */
+    clear: both; /*§ Non permette che vi siano elementi float(tanti) a sinistra o a destra dell'elemento che dispone di questa proprietà */
+}
+
+.container{
+    /* width: 65%; */
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+header, .jumbotron{
+    margin-bottom: 25px;
+}
+
+header{
+    height: 100px;
+    background-color: #e579e6;
+}
+
+.jumbotron{
+    height: 350px;
+    background-color: #e1d67a;
+}
+
+section.main{
+    margin-bottom: 10px;
+    background-color: #0186ff;
+}
+
+.bg-grey{background-color: #abcfe7;}
+
+.main-header{
+    height: 75px;
+    margin-bottom: 15px;
+}
+
+.main-aside, .main-article{
+    height: 400px;
+    float: left;
+}
+
+.main-aside{
+    width: calc(50% / 2);
+}
+
+.main-article{
+    width: calc(50% - 30px);
+    margin: 0 15px 15px;
+}
+
+footer{
+    height: 60px;
+    background-color: #8801fe;
+}
