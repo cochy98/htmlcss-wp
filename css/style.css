@@ -6,21 +6,24 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+/* clearfix da applicare per evitare che float faccia collassare gli elementi */
+.clearfix::after{
+    content: ""; /*? Necessario per definizione di pseudo-elemento (before, after, ecc.) */
+    display: table; /*? Necessario per compatibilità con vecchi browser, per gestire la relazione con il contenuto indipendentemente dalle nuove funzionalità */
+    clear: both; /*? Non permette che vi siano elementi float(tanti) a sinistra o a destra dell'elemento che dispone di questa proprietà */
+}
+
+/* Sfondo per tutta la pagina */
 body {
     background-color: #ffffff;
 }
 
+/* Colore di base per tutti gli li & p, salvo diversamente specificato */
 li, p{
     color: #949292;
 }
 
-/* clearfix da applicare per evitare che float faccia collassare gli elementi */
-.clearfix::after{
-    content: ""; /*# Necessario per definizione di pseudo-elemento (before, after, ecc.) */
-    display: table; /*? Necessario per compatibilità con vecchi browser, per gestire la relazione con il contenuto indipendentemente dalle nuove funzionalità */
-    clear: both; /*§ Non permette che vi siano elementi float(tanti) a sinistra o a destra dell'elemento che dispone di questa proprietà */
-}
-
+/* container generale con larghezza specificata e posto al centro pagina */
 .container{
     /* width: 65%; */
     max-width: 1100px;
@@ -28,14 +31,17 @@ li, p{
     margin: 0 auto;
 }
 
-header, .jumbotron{
+/* Margine bottom per header & jumbotron */
+header, section.jumbotron{
     margin-bottom: 25px;
 }
 
+/* Padding top e bottom da 20px per l'header */
 header{
     padding: 20px 0 20px;
 }
 
+/* Immagine di sfondo per il jumbotron */
 section.jumbotron{
     height: 470px;
     background-image: url("../img/banner.jpg");
@@ -45,17 +51,14 @@ section.jumbotron{
     z-index: 0;
 }
 
+/* Classe per rendere uno sfondo opaco */
 .layover{
-    /* position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; */
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3); 
 }
 
+/* Bordi smussati su tutte img della pagina */
 section.jumbotron, 
 .aside-box-img,
 .article-box-img,
@@ -63,6 +66,7 @@ section.jumbotron,
     border-radius: 10px;
 }
 
+/* Posizione del testo jumbotron con la proprietà 'position' */
 .text-jumbotron{
     width: 490px;
     position: absolute;
@@ -80,77 +84,92 @@ section.jumbotron,
     font-weight: normal;
 }
 
-section.main{
-    margin-bottom: 10px;
+.main-header>h1{
+    font-size: 1.7em;
 }
 
 .main-header{
     margin-bottom: 30px;
 }
 
-.main-header>h1{
-    font-size: 1.7em;
-}
-
-.main-aside, .main-article{
+/* Flotto a sinistra il contenuto di 'aside & article' */
+.main-aside, 
+.main-article{
     float: left;
 }
 
+/* I due box aside prendono il 20% ciascuno dello spazio a disposizione */
 .main-aside{
     width: 20%;
 }
 
+/* Il box article prende il 60% dello spazio, meno i margini left & right */
 .main-article{
     width: calc(60% - 30px);
     margin: 0 15px 15px;
 }
 
+/* I 3 box immagine prendono il 100% della larghezza a disposizione e una larghezza fissa da 190px */
 .box-img{
     width: 100%;
     height: 190px;
     margin-bottom: 12px;
 }
 
+/* Prendo l'immagine per il box 'aside 1' e la posiziono correttamente */
 .aside-1-img{
     background-image: url("../img/img-1.jpg");
     background-size: contain;
 }
 
+/* Prendo l'immagine per il box 'aside 2' */
 .aside-2-img{
     background-image: url("../img/img-3.jpg");
 }
 
+/* Prendo l'immagine per il box 'article' e la posiziono correttamente */
 .article-box-img{
     background-image: url("../img/banner-2.jpg");
     background-size: cover;
     background-position: center;
 }
 
+/* Margine sotto la fine del main (prima che inizia il footer) */
+section.main{
+    margin-bottom: 10px;
+}
+
+/* Altezza fissa per il footer */
 footer{
     height: 80px;
 }
 
+/* Allineamento e spessore testo del footer */
 footer>h4{
     text-align: center;
     font-weight: 100;
 }
 
+/* Colore e grandezza span del testo footer */
 footer span{
     color: red;
     font-size: 2em;
 }
 
+/* Cambio la proprietà della lista nav dell'header da "display block" a " display inline" */
 nav li{
     display: inline;
     font-weight: 500;
     padding-right: 5px;
 }
 
+/* Grandezza fissa per il logo dell'header */
 #img-logo{
     width: 180px;
     margin-right: 20px;
 }
 
+/* Linea verticale per il logo dell'header */
 #logo-box{
     margin-bottom: 30px;
     display: inline-block;
