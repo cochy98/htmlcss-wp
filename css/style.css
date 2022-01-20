@@ -3,6 +3,11 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
 }
 
 /* clearfix da applicare per evitare che float faccia collassare gli elementi */
@@ -14,7 +19,8 @@
 
 .container{
     /* width: 65%; */
-    max-width: 900px;
+    max-width: 1100px;
+    min-width: 900px;
     margin: 0 auto;
 }
 
@@ -23,8 +29,8 @@ header, .jumbotron{
 }
 
 header{
-    height: 100px;
-    background-color: #e579e6;
+    padding: 20px;
+    border: 1px solid black;
 }
 
 .jumbotron{
@@ -61,4 +67,22 @@ section.main{
 footer{
     height: 60px;
     background-color: #8801fe;
+}
+
+nav li{
+    display: inline;
+    color: #949292;
+    font-weight: 500;
+    padding-right: 5px;
+}
+
+#img-logo{
+    width: 180px;
+    margin-right: 20px;
+}
+
+#logo-box{
+    margin-bottom: 30px;
+    display: inline-block;
+    border-right: 2px solid #E7E7E7;
 }
